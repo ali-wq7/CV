@@ -1,0 +1,385 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Omar Ali | CV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top">
+
+    <!-- ================= NAVIGATION ================= -->
+    <header>
+        <nav>
+
+            <a href="#home" class="logo">
+                ALI<span>.</span>
+            </a>
+
+            <!-- Burger Button -->
+            <button id="burger" aria-label="Open menu">☰</button>
+
+            <!-- Navigation Menu -->
+            <div id="navMenu">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                INFORMATION TECHNOLOGY STUDENT
+            </p>
+
+            <h1>
+                Ali Omar <span>Ali</span>
+            </h1>
+
+            <h2>
+                Web Developer & IT Student
+            </h2>
+
+            <p>
+                I am an Information Technology student at Fatoni University.
+                I am interested in web development, programming, networking
+                and modern technology.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#contact" class="button">
+                    Contact Me
+                </a>
+
+                <a href="#projects" class="button second">
+                    View Projects
+                </a>
+
+            </div>
+
+        </div>
+      
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section">
+
+        <p class="section-number">
+            01 — ABOUT
+        </p>
+
+        <h2>
+            About Me
+        </h2>
+
+        <div class="about-grid">
+
+            <div>
+
+                <p class="big-text">
+                    I am an IT student who likes creating simple
+                    and useful technology solutions.
+                </p>
+
+                <p>
+                    My interests include web development, programming,
+                    computer networks, electronics and modern technologies.
+                    I enjoy learning new skills through university projects.
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <p>
+                    <b>University:</b>
+                    Fatoni University
+                </p>
+
+                <p>
+                    <b>Major:</b>
+                    Information Technology
+                </p>
+
+                <p>
+                    <b>Focus:</b>
+                    Web Development
+                </p>
+
+                <p>
+                    <b>Languages:</b>
+                    Arabic & English
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="section light">
+
+        <p class="section-number">
+            02 — SKILLS
+        </p>
+
+        <h2>
+            My Skills
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <span>01</span>
+                <h3>HTML & CSS</h3>
+                <p>
+                    Creating clean and responsive websites.
+                </p>
+            </div>
+
+            <div class="skill">
+                <span>02</span>
+                <h3>JavaScript</h3>
+                <p>
+                    Adding interaction and dynamic features.
+                </p>
+            </div>
+
+            <div class="skill">
+                <span>03</span>
+                <h3>Python</h3>
+                <p>
+                    Basic programming and problem solving.
+                </p>
+            </div>
+
+            <div class="skill">
+                <span>04</span>
+                <h3>Networking</h3>
+                <p>
+                    Basic computer networking and devices.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CAROUSEL ================= -->
+    <section id="projects" class="section dark">
+
+        <p class="section-number">
+            03 — PROJECTS
+        </p>
+
+        <h2>
+            My Projects
+        </h2>
+
+
+        <div class="carousel">
+
+            <!-- Previous -->
+            <button id="prev" aria-label="Previous project">
+                ‹  
+            </button>
+
+
+            <div class="project">
+
+                <img
+                    id="projectImage"
+                    src="https://marketplace.canva.com/MADGw1RotTk/6/thumbnail_large/canva-blue-pink-and-white-andromeda-galaxy-way-MADGw1RotTk.jpg"
+                    alt="Project image"
+                >
+
+                <div class="project-info">
+
+                    <p id="projectNumber">
+                        01 / 03
+                    </p>
+
+                    <h3 id="projectTitle">
+                        Web Development
+                    </h3>
+
+                    <p id="projectDescription">
+                        A responsive website created using
+                        HTML, CSS and JavaScript.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Next -->
+            <button id="next" aria-label="Next project">
+                ›
+            </button>
+
+        </div>
+
+
+        <!-- Carousel dots -->
+        <div id="dots"></div>
+
+    </section>
+
+
+    <!-- ================= CONTACT FORM ================= -->
+    <section id="contact" class="section">
+
+        <p class="section-number">
+            04 — CONTACT
+        </p>
+
+        <h2>
+            Contact Me
+        </h2>
+
+        <p>
+            Have a question, project or opportunity?
+            Send me a message.
+        </p>
+
+
+        <form id="contactForm">
+
+            <!-- Name -->
+            <label for="name">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your full name"
+
+                <!-- HTML PATTERN -->
+                pattern="[A-Za-z ]{3,30}"
+
+                title="Use 3-30 English letters and spaces"
+
+                required
+            >
+
+
+            <!-- Email -->
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="example@email.com"
+                required
+            >
+
+
+            <!-- Phone -->
+            <label for="phone">
+                Phone Number
+            </label>
+
+            <input
+                type="text"
+                id="phone"
+                placeholder="Example: 0812345678"
+
+                <!-- HTML PATTERN -->
+                pattern="[0-9]{9,15}"
+
+                title="Use 9-15 numbers"
+
+                required
+            >
+
+
+            <!-- Message -->
+            <label for="message">
+                Message
+            </label>
+
+            <textarea
+                id="message"
+                placeholder="Write your message..."
+                maxlength="500"
+                required
+            ></textarea>
+
+
+            <button type="submit" class="button">
+                Send Message
+            </button>
+
+        </form>
+
+
+        <p id="formMessage"></p>
+
+    </section>
+
+
+    <!-- ================= VISITOR COUNTER ================= -->
+    <div class="visitor-counter">
+
+        Website Visitors:
+
+        <strong id="visitorCount">
+            0
+        </strong>
+
+    </div>
+
+
+    <!-- ================= GO TO TOP ================= -->
+    <a href="#top" id="topButton">
+        ↑
+    </a>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <h3>
+            ALI<span>.</span>
+        </h3>
+
+        <p>
+            Information Technology Student
+        </p>
+
+        <small>
+            © 2026 Ali Omar Ali
+        </small>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
