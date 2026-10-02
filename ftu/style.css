@@ -1,0 +1,638 @@
+/* ===== 1. Colors and basic settings ===== */
+:root {
+  --navy: #0f2a5c;
+  --blue: #1d4ed8;
+  --gold: #c9a24b;
+  --bg: #f6f8fb;
+  --border: #e2e8f0;
+  --text: #1e293b;
+  --muted: #64748b;
+  --radius: 12px;
+}
+
+body {
+  font-family: "Inter", "Cairo", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Arabic uses the Cairo font */
+html[lang="ar"] body {
+  font-family: "Cairo", "Inter", sans-serif;
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  border-radius: 8px;
+  border-color: var(--border);
+  padding: 0.6rem 0.8rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+}
+
+.btn-primary {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.btn-primary:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+/* ===== 2. Navigation bar ===== */
+.app-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.app-nav .nav-link {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.9rem;
+  position: relative;
+}
+
+.app-nav .nav-link:hover {
+  color: var(--navy);
+}
+
+.app-nav .nav-link.active {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.app-nav .nav-link.active::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0.9rem;
+  bottom: 0;
+  height: 2px;
+  background: var(--gold);
+}
+
+.navbar-toggler {
+  border: 0;
+  color: var(--navy);
+  padding: 0;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* ===== 3. Hero section ===== */
+.hero {
+  background: linear-gradient(135deg, #0b1e45 0%, var(--navy) 55%, #1e3a8a 100%);
+  color: #fff;
+  padding: 80px 0 120px;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.hero-text {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.hero-img {
+  max-width: 440px;
+  width: 100%;
+}
+
+/* ===== 4. Statistics strip ===== */
+.stats-strip {
+  margin-top: -60px;
+  position: relative;
+  z-index: 2;
+}
+
+.stats-box {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(15, 42, 92, 0.08);
+}
+
+.stat-item {
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 1.9rem;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.stat-item small {
+  color: var(--muted);
+}
+
+@media (min-width: 992px) {
+  .stat-item+.stat-item {
+    border-inline-start: 1px solid var(--border);
+  }
+}
+
+/* ===== 5. Titles and page headers ===== */
+.section-title {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 1.6rem;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  inset-inline-start: 0;
+  width: 48px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--gold);
+}
+
+.section-title.center::after {
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+}
+
+html[dir="rtl"] .section-title.center::after {
+  transform: translateX(50%);
+}
+
+.page-head {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 36px 0;
+}
+
+.page-head h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 4px;
+}
+
+.page-head p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ===== 6. Event cards ===== */
+.event-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.event-card:hover {
+  box-shadow: 0 12px 28px rgba(15, 42, 92, 0.1);
+  transform: translateY(-3px);
+}
+
+.event-top {
+  display: flex;
+  gap: 14px;
+  padding: 20px 20px 10px;
+}
+
+.date-block {
+  min-width: 58px;
+  height: 62px;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+}
+
+.date-block strong {
+  font-size: 1.3rem;
+  color: var(--navy);
+}
+
+.date-block small {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.event-card h5 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 6px 0 0;
+}
+
+.event-body {
+  padding: 0 20px;
+  flex: 1;
+}
+
+.event-meta {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 0 0 4px;
+}
+
+.event-meta i {
+  color: var(--navy);
+  margin-inline-end: 6px;
+}
+
+.event-foot {
+  padding: 16px 20px 20px;
+}
+
+/* Category pill with colored dot */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.pill::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dot, var(--blue));
+}
+
+.pill-academic {
+  --dot: #2563eb;
+}
+
+.pill-sports {
+  --dot: #16a34a;
+}
+
+.pill-cultural {
+  --dot: #9333ea;
+}
+
+.pill-technology {
+  --dot: #ea580c;
+}
+
+/* Seats progress bar */
+.seats {
+  height: 5px;
+  border-radius: 5px;
+  background: var(--border);
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.seats span {
+  display: block;
+  height: 100%;
+  background: var(--navy);
+}
+
+/* ===== 7. Search and filter ===== */
+.search-box {
+  position: relative;
+}
+
+.search-box i {
+  position: absolute;
+  inset-inline-start: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+}
+
+.search-box input {
+  padding-inline-start: 40px;
+  background: #fff;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 6px 16px;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+
+.chip:hover {
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.chip.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+/* ===== 8. Features / info boxes ===== */
+.features {
+  background: #fff;
+  border-top: 1px solid var(--border);
+}
+
+.feature {
+  text-align: center;
+  padding: 8px 16px;
+}
+
+#page-about .feature {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  height: 100%;
+}
+
+.feature i {
+  display: inline-flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #eef2ff;
+  color: var(--navy);
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+.feature h5 {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.feature p {
+  color: var(--muted);
+  font-size: 0.93rem;
+  margin: 0;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  height: 100%;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-list li:last-child {
+  border: 0;
+}
+
+.contact-list i {
+  color: var(--navy);
+  font-size: 1.2rem;
+}
+
+.login-card {
+  max-width: 440px;
+  height: auto;
+  box-shadow: 0 10px 30px rgba(15, 42, 92, 0.08);
+}
+
+.login-icon {
+  font-size: 3rem;
+  color: var(--navy);
+}
+
+/* ===== 9. Dashboard ===== */
+.stat-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stat-card .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  color: var(--navy);
+}
+
+.stat-card small {
+  color: var(--muted);
+}
+
+.table-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.table-box h5 {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.table thead th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.role-badge {
+  background: #eef2ff;
+  color: var(--navy);
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 3px 12px;
+  font-size: 0.78rem;
+}
+
+/* ===== 10. Calendar ===== */
+.calendar-box {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.fc {
+  --fc-border-color: var(--border);
+  --fc-button-bg-color: var(--navy);
+  --fc-button-border-color: var(--navy);
+  --fc-button-hover-bg-color: var(--blue);
+  --fc-button-hover-border-color: var(--blue);
+  --fc-button-active-bg-color: var(--blue);
+  --fc-today-bg-color: #fffbeb;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.fc-event {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+
+/* ===== 11. Modal ===== */
+.modal-content {
+  border: 0;
+  border-radius: var(--radius);
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--border);
+}
+
+/* ===== 12. Footer ===== */
+.app-footer {
+  background: #0b1e45;
+  color: #94a3b8;
+}
+
+.app-footer h5,
+.app-footer h6 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.app-footer a {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  color: #fff;
+}
+
+.app-footer li {
+  margin-bottom: 6px;
+}
+
+.app-footer i {
+  margin-inline-end: 6px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Arrow icon flips in Arabic */
+html[dir="rtl"] .arrow {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+/* ===== 13. Mobile ===== */
+@media (max-width: 576px) {
+  .hero {
+    padding: 48px 0 90px;
+  }
+
+  .page-head {
+    padding: 26px 0;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+}

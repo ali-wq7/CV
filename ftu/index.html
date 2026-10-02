@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart University Event Management System</title>
+  <!-- Bootstrap CSS (swapped to the RTL version when Arabic is selected) -->
+  <link id="bootstrapCss" rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVIGATION BAR ================= -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg app-nav">
+      <section class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#" data-page="home">
+          <!-- LOGO: save your logo as logo.png next to index.html -->
+          <img id="siteLogo" class="logo" src="logo.png" alt="University Logo"
+            onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 rx=%278%27 fill=%27%230f2a5c%27/%3E%3Cpath d=%27M20 9 4 17l16 8 16-8zM10 22v6c4 4 16 4 20 0v-6l-10 5z%27 fill=%27%23fff%27/%3E%3C/svg%3E'">
+          <span data-i18n="brand"></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Menu">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+        <section class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav mx-auto gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="#" data-page="home" data-i18n="nav_home"></a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-page="events" data-i18n="nav_events"></a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-page="calendar" data-i18n="nav_calendar"></a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-page="dashboard" data-i18n="nav_dashboard"></a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-page="about" data-i18n="nav_about"></a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-page="contact" data-i18n="nav_contact"></a></li>
+          </ul>
+          <section class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+            <!-- LANGUAGE SWITCHER -->
+            <button id="langBtn" class="btn btn-outline-secondary btn-sm" type="button"></button>
+            <a id="loginLink" class="btn btn-primary btn-sm px-3" href="#" data-page="login"></a>
+          </section>
+        </section>
+      </section>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================= HOME ================= -->
+    <section id="page-home" class="page">
+
+      <section class="hero">
+        <section class="container">
+          <section class="row align-items-center g-5">
+            <article class="col-lg-6">
+              <span class="hero-tag" data-i18n="hero_tag"></span>
+              <h1 class="hero-title" data-i18n="hero_title"></h1>
+              <p class="hero-text" data-i18n="hero_text"></p>
+              <section class="d-flex flex-wrap gap-2">
+                <a class="btn btn-light btn-lg px-4" href="#" data-page="events" data-i18n="hero_btn"></a>
+                <a class="btn btn-outline-light btn-lg px-4" href="#" data-page="calendar" data-i18n="nav_calendar"></a>
+              </section>
+            </article>
+            <!-- HERO IMAGE (drawn with SVG, no file needed) -->
+            <figure class="col-lg-6 text-center m-0">
+              <svg viewBox="0 0 440 320" class="hero-img" role="img" aria-label="Campus illustration">
+                <rect x="20" y="20" width="400" height="280" rx="20" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff"
+                  stroke-opacity="0.18" />
+                <!-- building -->
+                <polygon points="90,140 220,80 350,140" fill="#ffffff" fill-opacity="0.9" />
+                <rect x="105" y="146" width="230" height="10" fill="#ffffff" fill-opacity="0.75" />
+                <rect x="115" y="160" width="16" height="84" fill="#ffffff" fill-opacity="0.6" />
+                <rect x="155" y="160" width="16" height="84" fill="#ffffff" fill-opacity="0.6" />
+                <rect x="269" y="160" width="16" height="84" fill="#ffffff" fill-opacity="0.6" />
+                <rect x="309" y="160" width="16" height="84" fill="#ffffff" fill-opacity="0.6" />
+                <rect x="198" y="185" width="44" height="59" rx="3" fill="#c9a24b" />
+                <rect x="95" y="244" width="250" height="10" fill="#ffffff" fill-opacity="0.9" />
+                <circle cx="220" cy="118" r="11" fill="#0f2a5c" />
+                <!-- calendar card -->
+                <rect x="318" y="38" width="86" height="88" rx="10" fill="#ffffff" />
+                <rect x="318" y="38" width="86" height="22" rx="10" fill="#c9a24b" />
+                <rect x="318" y="50" width="86" height="10" fill="#c9a24b" />
+                <circle cx="338" cy="80" r="4" fill="#cbd5e1" />
+                <circle cx="361" cy="80" r="4" fill="#cbd5e1" />
+                <circle cx="384" cy="80" r="4" fill="#cbd5e1" />
+                <circle cx="338" cy="100" r="4" fill="#cbd5e1" />
+                <circle cx="361" cy="100" r="4" fill="#0f2a5c" />
+                <circle cx="384" cy="100" r="4" fill="#cbd5e1" />
+                <!-- ticket card -->
+                <rect x="40" y="46" width="96" height="44" rx="10" fill="#ffffff" fill-opacity="0.95" />
+                <rect x="52" y="60" width="44" height="6" rx="3" fill="#0f2a5c" />
+                <rect x="52" y="72" width="64" height="5" rx="2.5" fill="#cbd5e1" />
+              </svg>
+            </figure>
+          </section>
+        </section>
+      </section>
+
+      <!-- Statistics strip -->
+      <section class="container stats-strip">
+        <section class="row g-0 stats-box" id="homeStats"></section>
+      </section>
+
+      <section class="container py-5">
+        <header class="d-flex justify-content-between align-items-end mb-4">
+          <h2 class="section-title m-0" data-i18n="upcoming"></h2>
+          <a href="#" class="link-primary fw-semibold text-decoration-none" data-page="events"><span
+              data-i18n="view_all"></span> <i class="bi bi-arrow-right arrow"></i></a>
+        </header>
+        <section class="row g-4" id="homeEvents"></section>
+      </section>
+
+      <!-- Features -->
+      <section class="features py-5">
+        <section class="container">
+          <h2 class="section-title text-center center" data-i18n="why_title"></h2>
+          <section class="row g-4 mt-1">
+            <article class="col-md-4">
+              <section class="feature"><i class="bi bi-search"></i>
+                <h5 data-i18n="ft1_t"></h5>
+                <p data-i18n="ft1"></p>
+              </section>
+            </article>
+            <article class="col-md-4">
+              <section class="feature"><i class="bi bi-calendar3"></i>
+                <h5 data-i18n="ft2_t"></h5>
+                <p data-i18n="ft2"></p>
+              </section>
+            </article>
+            <article class="col-md-4">
+              <section class="feature"><i class="bi bi-person-check"></i>
+                <h5 data-i18n="ft3_t"></h5>
+                <p data-i18n="ft3"></p>
+              </section>
+            </article>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <!-- ================= EVENTS ================= -->
+    <section id="page-events" class="page d-none">
+      <section class="page-head">
+        <section class="container">
+          <h1 data-i18n="events_title"></h1>
+          <p data-i18n="events_sub"></p>
+        </section>
+      </section>
+      <section class="container py-5">
+        <section class="search-box mb-3">
+          <i class="bi bi-search"></i>
+          <input id="searchInput" type="search" class="form-control" data-i18n-ph="search_ph">
+        </section>
+        <!-- Category filter buttons -->
+        <section class="chips mb-4" id="chips">
+          <button class="chip active" data-cat="all" data-i18n="all_cat"></button>
+          <button class="chip" data-cat="academic" data-i18n="academic"></button>
+          <button class="chip" data-cat="sports" data-i18n="sports"></button>
+          <button class="chip" data-cat="cultural" data-i18n="cultural"></button>
+          <button class="chip" data-cat="technology" data-i18n="technology"></button>
+        </section>
+        <section class="row g-4" id="eventsList"></section>
+      </section>
+    </section>
+
+    <!-- ================= CALENDAR ================= -->
+    <section id="page-calendar" class="page d-none">
+      <section class="page-head">
+        <section class="container">
+          <h1 data-i18n="calendar_title"></h1>
+          <p data-i18n="calendar_sub"></p>
+        </section>
+      </section>
+      <section class="container py-5">
+        <section id="calendar" class="calendar-box"></section>
+      </section>
+    </section>
+
+    <!-- ================= DASHBOARD ================= -->
+    <section id="page-dashboard" class="page d-none">
+      <section class="page-head">
+        <section class="container">
+          <h1 data-i18n="dash_title"></h1>
+          <p id="dashSub"></p>
+        </section>
+      </section>
+      <section class="container py-5">
+        <section id="dashboardContent"></section>
+      </section>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="page-about" class="page d-none">
+      <section class="page-head">
+        <section class="container">
+          <h1 data-i18n="about_title"></h1>
+          <p data-i18n="about_text"></p>
+        </section>
+      </section>
+      <section class="container py-5">
+        <section class="row g-4">
+          <article class="col-md-4">
+            <section class="feature"><i class="bi bi-mortarboard"></i>
+              <h5 data-i18n="about_1_t"></h5>
+              <p data-i18n="about_1"></p>
+            </section>
+          </article>
+          <article class="col-md-4">
+            <section class="feature"><i class="bi bi-shield-check"></i>
+              <h5 data-i18n="about_2_t"></h5>
+              <p data-i18n="about_2"></p>
+            </section>
+          </article>
+          <article class="col-md-4">
+            <section class="feature"><i class="bi bi-calendar-check"></i>
+              <h5 data-i18n="about_3_t"></h5>
+              <p data-i18n="about_3"></p>
+            </section>
+          </article>
+        </section>
+      </section>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="page-contact" class="page d-none">
+      <section class="page-head">
+        <section class="container">
+          <h1 data-i18n="contact_title"></h1>
+          <p data-i18n="contact_sub"></p>
+        </section>
+      </section>
+      <section class="container py-5">
+        <section class="row g-4">
+          <article class="col-lg-5">
+            <section class="panel">
+              <ul class="contact-list">
+                <li><i class="bi bi-geo-alt"></i><span data-i18n="addr"></span></li>
+                <li><i class="bi bi-envelope"></i><span>events@university.edu</span></li>
+                <li><i class="bi bi-telephone"></i><span dir="ltr">+000 000 0000</span></li>
+                <li><i class="bi bi-clock"></i><span data-i18n="hours"></span></li>
+              </ul>
+            </section>
+          </article>
+          <article class="col-lg-7">
+            <form id="contactForm" class="panel">
+              <label class="form-label" data-i18n="name"></label>
+              <input class="form-control mb-3" required>
+              <label class="form-label" data-i18n="email"></label>
+              <input type="email" class="form-control mb-3" required>
+              <label class="form-label" data-i18n="c_msg"></label>
+              <textarea class="form-control mb-3" rows="4" required></textarea>
+              <button class="btn btn-primary px-4" data-i18n="send"></button>
+            </form>
+          </article>
+        </section>
+      </section>
+    </section>
+
+    <!-- ================= LOGIN ================= -->
+    <section id="page-login" class="page d-none">
+      <section class="container py-5">
+        <form id="loginForm" class="panel login-card mx-auto">
+          <header class="text-center mb-4">
+            <i class="bi bi-person-circle login-icon"></i>
+            <h2 class="h4 fw-bold mt-2" data-i18n="login_title"></h2>
+            <p class="text-muted small m-0" data-i18n="login_sub"></p>
+          </header>
+          <label class="form-label" data-i18n="name"></label>
+          <input id="loginName" class="form-control mb-3" required>
+          <label class="form-label" data-i18n="email"></label>
+          <input id="loginEmail" type="email" class="form-control mb-3" required>
+          <label class="form-label" data-i18n="role"></label>
+          <select id="loginRole" class="form-select mb-3">
+            <option value="student" data-i18n="student"></option>
+            <option value="admin" data-i18n="admin"></option>
+          </select>
+          <section id="passwordBox" class="d-none">
+            <label class="form-label" data-i18n="password"></label>
+            <input id="loginPass" type="password" class="form-control mb-1" placeholder="admin123">
+            <small class="text-muted d-block mb-3">Demo: admin123</small>
+          </section>
+          <button class="btn btn-primary w-100" data-i18n="login_btn"></button>
+        </form>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="app-footer">
+    <section class="container py-5">
+      <section class="row g-4">
+        <article class="col-lg-5">
+          <h5 data-i18n="brand"></h5>
+          <p class="small" data-i18n="footer_about"></p>
+        </article>
+        <article class="col-6 col-lg-3">
+          <h6 data-i18n="quick_links"></h6>
+          <ul class="list-unstyled small">
+            <li><a href="#" data-page="events" data-i18n="nav_events"></a></li>
+            <li><a href="#" data-page="calendar" data-i18n="nav_calendar"></a></li>
+            <li><a href="#" data-page="dashboard" data-i18n="nav_dashboard"></a></li>
+          </ul>
+        </article>
+        <article class="col-6 col-lg-4">
+          <h6 data-i18n="nav_contact"></h6>
+          <ul class="list-unstyled small">
+            <li><i class="bi bi-envelope"></i> events@university.edu</li>
+            <li><i class="bi bi-telephone"></i> <span dir="ltr">+000 000 0000</span></li>
+          </ul>
+        </article>
+      </section>
+    </section>
+    <section class="footer-bottom text-center py-3"><small data-i18n="footer"></small></section>
+  </footer>
+
+  <!-- ================= TOAST (notification) ================= -->
+  <section class="toast-container position-fixed bottom-0 end-0 p-3">
+    <section id="toast" class="toast align-items-center text-bg-dark border-0" role="alert">
+      <section class="d-flex">
+        <section class="toast-body" id="toastMsg"></section>
+        <button type="button" class="btn-close btn-close-white m-auto me-2 ms-2" data-bs-dismiss="toast"></button>
+      </section>
+    </section>
+  </section>
+
+  <!-- ================= EVENT DETAILS MODAL ================= -->
+  <section class="modal fade" id="detailsModal" tabindex="-1">
+    <section class="modal-dialog modal-dialog-centered">
+      <section class="modal-content">
+        <header class="modal-header">
+          <h5 class="modal-title" id="dTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </header>
+        <section class="modal-body" id="dBody"></section>
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" data-i18n="close"></button>
+          <button type="button" class="btn btn-primary" id="dRegister"></button>
+        </footer>
+      </section>
+    </section>
+  </section>
+
+  <!-- ================= ADMIN: ADD / EDIT EVENT MODAL ================= -->
+  <section class="modal fade" id="formModal" tabindex="-1">
+    <section class="modal-dialog modal-dialog-centered">
+      <form class="modal-content" id="eventForm">
+        <header class="modal-header">
+          <h5 class="modal-title" id="formTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </header>
+        <section class="modal-body">
+          <input type="hidden" id="fId">
+          <label class="form-label" data-i18n="f_title"></label>
+          <input id="fTitle" class="form-control mb-2" required>
+          <label class="form-label" data-i18n="f_category"></label>
+          <select id="fCategory" class="form-select mb-2">
+            <option value="academic" data-i18n="academic"></option>
+            <option value="sports" data-i18n="sports"></option>
+            <option value="cultural" data-i18n="cultural"></option>
+            <option value="technology" data-i18n="technology"></option>
+          </select>
+          <section class="row g-2 mb-2">
+            <section class="col-6"><label class="form-label" data-i18n="f_date"></label><input id="fDate" type="date"
+                class="form-control" required></section>
+            <section class="col-6"><label class="form-label" data-i18n="f_time"></label><input id="fTime" type="time"
+                class="form-control" required></section>
+          </section>
+          <label class="form-label" data-i18n="f_location"></label>
+          <input id="fLocation" class="form-control mb-2" required>
+          <label class="form-label" data-i18n="f_capacity"></label>
+          <input id="fCapacity" type="number" min="1" class="form-control mb-2" required>
+          <label class="form-label" data-i18n="f_desc"></label>
+          <textarea id="fDesc" class="form-control" rows="3" required></textarea>
+        </section>
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" data-i18n="close"></button>
+          <button class="btn btn-primary" data-i18n="save"></button>
+        </footer>
+      </form>
+    </section>
+  </section>
+
+  <!-- Libraries (no jQuery) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/locales-all.global.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
